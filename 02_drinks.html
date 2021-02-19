@@ -46,11 +46,11 @@
         visDrinks(drink);
     }
 
-    function visDrinks(x) {
+    function visDrinks(drink) {
         console.log(visDrinks);
-        document.querySelector(".navn").textContent = x.navn + " ";
-        document.querySelector(".langbeskrivelse").textContent = x.langbeskrivelse + " ";
-        document.querySelector(".billede").src = medieurl + x.billede;
+        document.querySelector(".navn").textContent = drink.navn + " ";
+        document.querySelector(".langbeskrivelse").textContent = drink.langbeskrivelse + " ";
+        document.querySelector(".billede").src = medieurl + drink.billede;
         document.querySelector("button").addEventListener("click", tilbageTilDrinks);
     }
 
@@ -58,7 +58,4 @@
         console.log(tilbageTilDrinks);
         history.back();
     }
-
-</script>
-
-</html>
+</script></html>
