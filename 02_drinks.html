@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section id="menu"></section>
+    <header>
+        <article class="kategori">
+            <h2 class="navn"></h2>
+            <p class="kortbeskrivelse"></p>
+            <p class="langbeskrivelse"></p>
+            <p class="ingredienser"></p>
+            <p class="fremgangsmåde"></p>
+            <img src="" alt="" class="billede">
+            <button>tilbage</button>
+        </article>
+    </header>
+</body>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+
+    const header = document.querySelector("h1");
+    const medieurl = "https://temaopgave-7c0f.restdb.io/media/";
+    const myHeaders = {
+
+        "x-apikey": "602f7cf35ad3610fb5bb63a9"
+    }
+
+    console.log("ID", id);
+    document.addEventListener("DOMContentLoaded", loadJSON);
+
+    async function loadJSON() {
+        console.log(loadJSON);
+        const JSONData = await fetch(`https://temaopgave-7c0f.restdb.io/rest/drinks/${id}`, {
+            headers: myHeaders
+        });
+        drink = await JSONData.json();
+        console.log("Drinks", drink);
+        visDrinks(drink);
+    }
+
+    function visDrinks(x) {
+        console.log(visDrinks);
+        document.querySelector(".navn").textContent = x.navn + " ";
+        document.querySelector(".langbeskrivelse").textContent = x.langbeskrivelse + " ";
+        document.querySelector(".billede").src = medieurl + x.billede;
+        document.querySelector("button").addEventListener("click", tilbageTilDrinks);
+    }
+
+    function tilbageTilDrinks() {
+        console.log(tilbageTilDrinks);
+        history.back();
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinks opskrifter</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section id="first_section">
+        <h1>Drinks website</h1>
+
+        <header>
+            <nav>
+                <button data-drinks="alle" class="valgt">Alle</button>
+                <button data-drinks="Gin">Gin</button>
+                <button data-drinks="Vodka">Vodka</button>
+                <button data-drinks="Rom">Rom</button>
+                <button data-drinks="Mocktail">Mocktails</button>
+            </nav>
+        </header>
+    </section>
+
+    <section id="liste"></section>
+
+    <template>
+        <article class="kategori">
+            <h2 class="navn"></h2>
+            <p class="kortbeskrivelse"></p>
+            <p class="langbeskrivelse"></p>
+            <p class="ingredienser"></p>
+            <p class="fremgangsmåde"></p>
+            <img src="" alt="" class="billede">
+        </article>
+    </template>
+    <footer id="footer"></footer>
+</body>
+
+<script>
+    const header = document.querySelector("h1");
+    const medieurl = "https://temaopgave-7c0f.restdb.io/media/";
+    const myHeaders = {
+
+        "x-apikey": "602f7cf35ad3610fb5bb63a9"
+    }
+    document.addEventListener("DOMContentLoaded", start)
+    let drinks;
+    let filter = "alle";
+
+    // første funktion der kaldes efter DOM er loaded
+    function start() {
+        console.log(start);
+        const filterKnapper = document.querySelectorAll("nav button");
+        filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));
+        loadJSON();
+    }
+
+    function filtrerDrinks() {
+        console.log(filtrerDrinks);
+        filter = this.dataset.drinks;
+        document.querySelector(".valgt").classList.remove("valgt");
+        this.classList.add("valgt");
+        visDrinks(drinks);
+        header.textContent = this.textContent;
+    }
+    async function loadJSON() {
+        console.log(loadJSON);
+        const JSONData = await fetch("https://temaopgave-7c0f.restdb.io/rest/drinks", {
+            headers: myHeaders
+        });
+        drinks = await JSONData.json();
+        console.log("Drinks", drinks);
+        visDrinks(drinks);
+    }
+
+    function visDrinks() {
+        console.log(visDrinks);
+        const dest = document.querySelector("#liste"); // container til articles med en person
+        const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
+        dest.textContent = "";
+
+        drinks.forEach(drink => {
+            console.log("Drinks", drink.navn);
+            // loop igennem json (personer)
+            if (filter == drink.kategori || filter == "alle") {
+                const klon = skabelon.cloneNode(true);
+                klon.querySelector(".navn").textContent = drink.navn + " ";
+                klon.querySelector(".kortbeskrivelse").textContent = drink.kortbeskrivelse + " ";
+                klon.querySelector(".billede").src = medieurl + drink.billede;
+                klon.querySelector("article").addEventListener("click", () => visDetaljer(drink));
+                dest.appendChild(klon);
+            }
+
+        })
+    }
+
+    function visDetaljer(hvem) {
+        console.log(visDetaljer);
+        location.href = `02_drinks.html?id=${hvem._id}`
+    }
+</script></html>
