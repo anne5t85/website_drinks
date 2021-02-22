@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
     * {
@@ -18,7 +19,6 @@
 
     body {
         margin: 0;
-        background-color: rgb(234, 205, 192);
 
     }
 
@@ -35,57 +35,62 @@
 
     .kategori {
         padding: 3em;
-        border: 15px solid white;
-        background-color: rgb(208, 162, 141);
+        /*        border: 1px solid rgba(255, 173, 92, 0.43);*/
+        border-radius: 10px;
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     }
 
-    header {
-        background-color: rgb(208, 162, 141);
-        height: 8vh;
-        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
-
-    }
-
-    /*---------Style af menu knapper---------*/
     button {
-        background-color: #D0A28D;
-        color: white;
-        border-radius: 0;
+        background-color: white;
+        border-radius: 3px;
         border: #725e54;
         font-size: 18px;
         display: inline-block;
         padding: 10px;
         margin: 15px;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Dancing Script', cursive;
+        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
+
+
     }
 
+
     button:hover {
-        color: black;
+        background-color: #D0A28D;
+        color: white;
         transition-duration: 0.2s;
 
     }
 
     .valgt {
         cursor: pointer;
-        color: rgb(234, 205, 192);
+        background-color: #D0A28D;
+        color: white;
     }
 
 
-    /*--------Style af tekst-------*/
+    nav {
+        text-align: center;
+        padding-top: 15px;
+
+    }
+
     h1 {
         text-align: center;
         font-family: 'Dancing Script', cursive;
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin-top: 0;
-        padding-top: 12rem;
+        padding-top: 60px;
         color: white;
         text-shadow: 2px 2px 5px rgb(90, 90, 90);
+
     }
 
-    h2 {
-        font-family: 'Dancing Script', cursive;
-        text-align: center;
-        font-size: 2rem;
+    header {
+        background-color: rgb(208, 162, 141);
+        height: 25vh;
+        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
+
     }
 
     p {
@@ -93,7 +98,11 @@
         text-align: center;
     }
 
-    /*------Style af burgermenu-------*/
+    h2 {
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+    }
+
     .hidden {
         opacity: 0;
         cursor: pointer;
@@ -101,10 +110,13 @@
 
 
     #menuknap_wrapper {
-        /*        padding-right: 10px;*/
+        /*
+            display: flex;
+            justify-content: flex-end;
+*/
+        padding-right: 10px;
         color: white;
-        margin-top: 10px;
-        ;
+        margin-top: ;
     }
 
     #menuknap {
@@ -117,36 +129,16 @@
         list-style-type: none;
         display: block;
         margin-bottom: 0;
-        /*        padding-right: 30px;*/
+        padding-right: 30px;
     }
 
-    #menu li {
-        list-style: none;
-
-    }
-
-    nav ul {
-        position: absolute;
-        z-index: 1;
-        padding-left: 0;
-        background-color: #D0A28D;
-        width: 100%;
-        height: 54vh;
-        margin: 0;
-    }
-
-    nav {
-        text-align: center;
-        padding-top: 4px;
-
-    }
 
 
     /* ------- burgermenu icon -----------*/
     .bar1,
     .bar2,
     .bar3 {
-        width: 30px;
+        width: 25px;
         height: 2px;
         background-color: #000000;
         margin: 6px 0;
@@ -156,7 +148,7 @@
 
     .change .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-8px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
     }
 
 
@@ -170,52 +162,9 @@
         transform: rotate(45deg) translate(-4px, -4px);
     }
 
-    /*-----Style af footer------*/
-    .footer {
-        height: 23vh;
-        width: 100%;
-        background-color: rgb(208, 162, 141);
-        text-align: center;
-        font-family: 'Open Sans', sans-serif;
-    }
 
-    .footer a {
-        display: inline-block;
-        color: black;
-        padding: 15px;
-        margin: 3px;
-        text-decoration: none;
-    }
 
-    .footer a:hover {
-        color: white;
-    }
-
-    /*-------billede og logo i mobile------*/
-    #first_section {
-        background-image: url(images/forside.jpg);
-        width: 100%;
-        height: 40vh;
-        background-size: cover;
-        background-position: 56% 50%;
-        max-width: none;
-    }
-
-    .logomobile {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        margin-top: 3rem;
-        margin-left: 37.8vw;
-
-    }
-
-    .logodesktop {
-        display: none;
-    }
-
-    /*--------desktop-------*/
-    @media (min-width:850px) {
+    @media (min-width:730px) {
 
         #menuknap {
             display: none;
@@ -232,101 +181,107 @@
 
         }
 
+    }
 
-        #menu li {
-            display: inline-block;
-            margin: 1rem;
-            padding: 0;
+    /*    -----FOOTER-----*/
 
-        }
 
-        nav ul {
-            position: relative;
-            padding-left: 0;
-            background: none;
-            height: 2rem;
-            width: 100%;
-            margin: 0;
-        }
+    footer {
+        background-color: rgb(208, 162, 141);
+        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        font-size: 0.8rem;
+        font-family: 'Open Sans', sans-serif;
+    }
 
-        header {
-            height: 20vh;
-        }
 
-        button {
-            font-size: 20px;
-        }
 
-        h1 {
-            font-size: 3.5rem;
-            padding-top: 0;
-        }
-
-        #first_section {
-            width: 100%;
-            height: 55vh;
-        }
-
-        .logodesktop {
-            display: block;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
-            height: 200px;
-            width: 200px;
-        }
-
-        .logomobile {
-            display: none;
-        }
+    .fa {
+        color: black;
+        font-size: 20px;
+        font-size: 20px;
 
 
     }
-
 </style>
 
 <body>
     <section id="first_section">
-        <a href="forside_drinks.html"><img src="images/black.png" alt="logo" class="logomobile"></a>
-        <a href="forside_drinks.html"><img src="images/black.png" alt="logo" class="logodesktop"></a>
-
-        <h1>IT'S DRINK O'CLOCK</h1>
-
+        <header>
+            <h1>It's drinks o'clock</h1>
+        </header>
     </section>
-    <header>
-        <nav>
-            <div id="menuknap_wrapper">
-                <div id="menuknap">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
+
+    <nav>
+        <div id="menuknap_wrapper">
+            <div id="menuknap">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <ul id="menu" class="hidden">
+            <nav>
+                <button data-drinks="alle" class="valgt">Alle</button>
+                <button data-drinks="Gin">Gin</button>
+                <button data-drinks="Vodka">Vodka</button>
+                <button data-drinks="Rom">Rom</button>
+                <button data-drinks="Mocktail">Mocktails</button>
+            </nav>
+        </ul>
+
+        <section id="liste"></section>
+
+        <template>
+            <article class="kategori">
+                <h2 class="navn"></h2>
+                <p class="kortbeskrivelse"></p>
+                <p class="langbeskrivelse"></p>
+                <p class="ingredienser"></p>
+                <p class="fremgangsmåde"></p>
+                <img src="" alt="" class="billede">
+            </article>
+        </template>
+
+
+        <footer id="footer">
+            <div class="kontakt">
+                <h3>Kontakt os</h3>
+                <p>Tlf.: +45 00902171</p>
+                <p>Mail: info@drinkoclock.dk</p>
+            </div>
+
+            <div class="nyhedsbrev">
+                <forms>
+                    <h3>Nyhedsbrev</h3>
+                    <p>Tilmeld dig vores nyhedsbrev og få tilsendt nye lækre opskrifter</p>
+
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email">
+                    <button>Tilmeld</button>
+                </forms>
+            </div>
+
+
+            <div class="container">
+                <h3>Følg os</h3>
+                <div class="footer-social-icons">
+                    <a href="#" class="fa fa-facebook"></a>
+
+
+                    <a href="#" class="fa fa-instagram"></a>
                 </div>
             </div>
-            <ul id="menu" class="hidden">
 
-                <li><button data-drinks="alle" class="valgt">Alle</button></li>
-                <li> <button data-drinks="Gin">Gin</button></li>
-                <li> <button data-drinks="Vodka">Vodka</button></li>
-                <li><button data-drinks="Rom">Rom</button></li>
-                <li><button data-drinks="Mocktail">Mocktails</button></li>
+        </footer>
 
-            </ul>
-        </nav>
-    </header>
-    <section id="liste"></section>
 
-    <template>
-        <article class="kategori">
-            <img src="" alt="" class="billede">
 
-            <h2 class="navn"></h2>
-            <p class="kortbeskrivelse"></p>
-            <p class="langbeskrivelse"></p>
-            <p class="ingredienser"></p>
-            <p class="fremgangsmåde"></p>
-        </article>
-    </template>
-    <footer class="footer"></footer>
+
+
+
 </body>
 
 <script>
@@ -403,7 +358,4 @@
     function myFunction(x) {
         x.classList.toggle("change");
     }
-
-</script>
-
-</html>
+</script></html>
