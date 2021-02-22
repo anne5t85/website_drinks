@@ -17,6 +17,7 @@
 
     body {
         margin: 0;
+        background-color: rgb(234, 205, 192);
 
     }
 
@@ -33,64 +34,57 @@
 
     .kategori {
         padding: 3em;
-        /*        border: 1px solid rgba(255, 173, 92, 0.43);*/
-        /*
-        border-radius: 10px;
-        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-*/
+        border: 15px solid white;
+        background-color: rgb(208, 162, 141);
     }
 
+    header {
+        background-color: rgb(208, 162, 141);
+        height: 8vh;
+        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
+
+    }
+
+    /*---------Style af menu knapper---------*/
     button {
-        background-color: white;
-        border-radius: 3px;
+        background-color: #D0A28D;
+        color: white;
+        border-radius: 0;
         border: #725e54;
         font-size: 18px;
         display: inline-block;
         padding: 10px;
         margin: 15px;
         font-family: 'Open Sans', sans-serif;
-        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
-
-
     }
 
-
     button:hover {
-        background-color: #D0A28D;
-        color: white;
+        color: black;
         transition-duration: 0.2s;
 
     }
 
     .valgt {
         cursor: pointer;
-        background-color: #D0A28D;
-        color: white;
+        color: rgb(234, 205, 192);
     }
 
 
-    nav {
-        text-align: center;
-        padding-top: 15px;
-
-    }
-
+    /*--------Style af tekst-------*/
     h1 {
         text-align: center;
         font-family: 'Dancing Script', cursive;
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-top: 0;
-        padding-top: 60px;
+        padding-top: 12rem;
         color: white;
         text-shadow: 2px 2px 5px rgb(90, 90, 90);
-
     }
 
-    header {
-        background-color: rgb(208, 162, 141);
-        height: 25vh;
-        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
-
+    h2 {
+        font-family: 'Dancing Script', cursive;
+        text-align: center;
+        font-size: 2rem;
     }
 
     p {
@@ -98,11 +92,7 @@
         text-align: center;
     }
 
-    h2 {
-        font-family: 'Open Sans', sans-serif;
-        text-align: center;
-    }
-
+    /*------Style af burgermenu-------*/
     .hidden {
         opacity: 0;
         cursor: pointer;
@@ -110,13 +100,10 @@
 
 
     #menuknap_wrapper {
-        /*
-            display: flex;
-            justify-content: flex-end;
-*/
-        padding-right: 10px;
+        /*        padding-right: 10px;*/
         color: white;
-        margin-top: ;
+        margin-top: 10px;
+        ;
     }
 
     #menuknap {
@@ -129,16 +116,36 @@
         list-style-type: none;
         display: block;
         margin-bottom: 0;
-        padding-right: 30px;
+        /*        padding-right: 30px;*/
     }
 
+    #menu li {
+        list-style: none;
+
+    }
+
+    nav ul {
+        position: absolute;
+        z-index: 1;
+        padding-left: 0;
+        background-color: #D0A28D;
+        width: 100%;
+        height: 54vh;
+        margin: 0;
+    }
+
+    nav {
+        text-align: center;
+        padding-top: 4px;
+
+    }
 
 
     /* ------- burgermenu icon -----------*/
     .bar1,
     .bar2,
     .bar3 {
-        width: 25px;
+        width: 30px;
         height: 2px;
         background-color: #000000;
         margin: 6px 0;
@@ -148,7 +155,7 @@
 
     .change .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-8px, 6px);
     }
 
 
@@ -162,27 +169,9 @@
         transform: rotate(45deg) translate(-4px, -4px);
     }
 
-    @media (min-width:730px) {
-
-        #menuknap {
-            display: none;
-        }
-
-
-        #menu.hidden {
-            opacity: 1;
-        }
-
-        #menuknap_wrapper {
-            padding-right: 30px;
-            width: 20%;
-
-        }
-
-    }
-
+    /*-----Style af footer------*/
     .footer {
-        height: 20vh;
+        height: 23vh;
         width: 100%;
         background-color: rgb(208, 162, 141);
         text-align: center;
@@ -200,31 +189,129 @@
     .footer a:hover {
         color: white;
     }
+
+    /*-------billede og logo i mobile------*/
+    #first_section {
+        background-image: url(images/forside.jpg);
+        width: 100%;
+        height: 40vh;
+        background-size: cover;
+        background-position: 56% 50%;
+        max-width: none;
+    }
+
+    .logomobile {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        margin-top: 3rem;
+        margin-left: 37.8vw;
+
+    }
+
+    .logodesktop {
+        display: none;
+    }
+
+    /*--------desktop-------*/
+    @media (min-width:850px) {
+
+        #menuknap {
+            display: none;
+        }
+
+
+        #menu.hidden {
+            opacity: 1;
+        }
+
+        #menuknap_wrapper {
+            padding-right: 30px;
+            width: 20%;
+
+        }
+
+
+        #menu li {
+            display: inline-block;
+            margin: 1rem;
+            padding: 0;
+
+        }
+
+        nav ul {
+            position: relative;
+            padding-left: 0;
+            background: none;
+            height: 2rem;
+            width: 100%;
+            margin: 0;
+        }
+
+        header {
+            height: 20vh;
+        }
+
+        button {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            padding-top: 0;
+        }
+
+        #first_section {
+            width: 100%;
+            height: 55vh;
+        }
+
+        .logodesktop {
+            display: block;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            height: 200px;
+            width: 200px;
+        }
+
+        .logomobile {
+            display: none;
+        }
+
+
+    }
+
 </style>
 
 <body>
     <section id="first_section">
-        <header>
-            <h1>It's drinks o'clock</h1>
-        </header>
-    </section>
-    <div id="menuknap_wrapper">
-        <div id="menuknap">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-    </div>
-    <ul id="menu" class="hidden">
-        <nav>
-            <button data-drinks="alle" class="valgt">Alle</button>
-            <button data-drinks="Gin">Gin</button>
-            <button data-drinks="Vodka">Vodka</button>
-            <button data-drinks="Rom">Rom</button>
-            <button data-drinks="Mocktail">Mocktails</button>
-        </nav>
-    </ul>
+        <a href="forside_drinks.html"><img src="images/black.png" alt="logo" class="logomobile"></a>
+        <a href="forside_drinks.html"><img src="images/black.png" alt="logo" class="logodesktop"></a>
 
+        <h1>IT'S DRINK O'CLOCK</h1>
+
+    </section>
+    <header>
+        <nav>
+            <div id="menuknap_wrapper">
+                <div id="menuknap">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+            <ul id="menu" class="hidden">
+
+                <li><button data-drinks="alle" class="valgt">Alle</button></li>
+                <li> <button data-drinks="Gin">Gin</button></li>
+                <li> <button data-drinks="Vodka">Vodka</button></li>
+                <li><button data-drinks="Rom">Rom</button></li>
+                <li><button data-drinks="Mocktail">Mocktails</button></li>
+
+            </ul>
+        </nav>
+    </header>
     <section id="liste"></section>
 
     <template>
@@ -315,4 +402,7 @@
     function myFunction(x) {
         x.classList.toggle("change");
     }
-</script></html>
+
+</script>
+
+</html>
