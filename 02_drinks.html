@@ -7,56 +7,6 @@
     <title></title>
     <link rel="stylesheet" href="">
 </head>
-<!--
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        margin: 0;
-
-    }
-
-    img {
-        width: 50%;
-    }
-
-    #liste {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap: 1em;
-        margin: 5em;
-    }
-
-
-
-
-
-
-    @media (max-width:730px) {
-
-
-
-        h2 {
-            font-size: 3rem;
-        }
-
-        p {
-            font-size: 1.2rem;
-
-        }
-
-        .kategori {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 20px;
-        }
-    }
-
-</style>
--->
-
 
 <style>
     * {
@@ -66,6 +16,14 @@
     body {
         margin: 0;
 
+
+    }
+
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
+        margin-top: 60px;
+        margin-left: 40px;
     }
 
     img {
@@ -79,11 +37,6 @@
         font-family: 'Dancing Script', cursive;
     }
 
-
-
-
-
-
     p {
         text-align: center;
         padding-right: 30px;
@@ -91,16 +44,12 @@
         font-family: 'Open Sans', sans-serif;
     }
 
-
-
     .kategori {
         max-width: 1100px;
         margin: 0 auto;
         margin-top: 60px;
         margin-left: 40px;
     }
-
-
 
     button {
         background-color: white;
@@ -112,15 +61,14 @@
         margin: 15px;
         font-family: 'Open Sans', sans-serif;
         box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
-
-
     }
+
 
     @media (min-width:750px) {
         .kategori {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-gap: 10px;
+            grid-gap: 20px;
         }
 
         h2 {
@@ -139,20 +87,26 @@
 
 
 <body>
-    <section id="menu"></section>
-    <header>
-        <article class="kategori">
-            <img src="" alt="" class="billede">
-
-            <h2 class="navn"></h2>
-            <p class="kortbeskrivelse"></p>
-            <p class="langbeskrivelse"></p>
-            <p class="ingredienser"></p>
-            <p class="fremgangsmåde"></p>
-            <button>Tilbage</button>
-        </article>
-    </header>
+    <main>
+        <section id="menu"></section>
+        <header>
+            <article class="kategori">
+                <div class="left">
+                    <img src="" alt="" class="billede">
+                </div>
+                <div class="right">
+                    <h2 class="navn"></h2>
+                    <p class="kortbeskrivelse"></p>
+                    <p class="langbeskrivelse"></p>
+                    <p class="ingredienser"></p>
+                    <p class="fremgangsmåde"></p>
+                    <button>Tilbage</button>
+                </div>
+            </article>
+        </header>
+    </main>
 </body>
+
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
