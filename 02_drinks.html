@@ -7,17 +7,54 @@
     <title></title>
     <link rel="stylesheet" href="">
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+
+    }
+
+    img {
+        width: 100%;
+    }
+
+    #liste {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 1em;
+        margin: 5em;
+    }
+
+    .kategori {
+        padding: 5em;
+        border-radius: 40px;
+        margin: 200px;
+        margin-top: 30px;
+    }
+
+    /*
+    @media (max-width:730px) {
+        .kategori {
+            margin: 0;
+        }
+*/
+
+</style>
 
 <body>
     <section id="menu"></section>
     <header>
         <article class="kategori">
+            <img src="" alt="" class="billede">
+
             <h2 class="navn"></h2>
             <p class="kortbeskrivelse"></p>
             <p class="langbeskrivelse"></p>
             <p class="ingredienser"></p>
             <p class="fremgangsmåde"></p>
-            <img src="" alt="" class="billede">
             <button>tilbage</button>
         </article>
     </header>
@@ -58,4 +95,7 @@
         console.log(tilbageTilDrinks);
         history.back();
     }
-</script></html>
+
+</script>
+
+</html>

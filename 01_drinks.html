@@ -34,8 +34,10 @@
     .kategori {
         padding: 3em;
         /*        border: 1px solid rgba(255, 173, 92, 0.43);*/
+        /*
         border-radius: 10px;
         box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+*/
     }
 
     button {
@@ -46,7 +48,7 @@
         display: inline-block;
         padding: 10px;
         margin: 15px;
-        font-family: 'Dancing Script', cursive;
+        font-family: 'Open Sans', sans-serif;
         box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
 
 
@@ -178,6 +180,26 @@
         }
 
     }
+
+    .footer {
+        height: 20vh;
+        width: 100%;
+        background-color: rgb(208, 162, 141);
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .footer a {
+        display: inline-block;
+        color: black;
+        padding: 15px;
+        margin: 3px;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: white;
+    }
 </style>
 
 <body>
@@ -186,38 +208,37 @@
             <h1>It's drinks o'clock</h1>
         </header>
     </section>
-
-    <nav>
-        <div id="menuknap_wrapper">
-            <div id="menuknap">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
+    <div id="menuknap_wrapper">
+        <div id="menuknap">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
-        <ul id="menu" class="hidden">
-            <nav>
-                <button data-drinks="alle" class="valgt">Alle</button>
-                <button data-drinks="Gin">Gin</button>
-                <button data-drinks="Vodka">Vodka</button>
-                <button data-drinks="Rom">Rom</button>
-                <button data-drinks="Mocktail">Mocktails</button>
-            </nav>
-        </ul>
+    </div>
+    <ul id="menu" class="hidden">
+        <nav>
+            <button data-drinks="alle" class="valgt">Alle</button>
+            <button data-drinks="Gin">Gin</button>
+            <button data-drinks="Vodka">Vodka</button>
+            <button data-drinks="Rom">Rom</button>
+            <button data-drinks="Mocktail">Mocktails</button>
+        </nav>
+    </ul>
 
-        <section id="liste"></section>
+    <section id="liste"></section>
 
-        <template>
-            <article class="kategori">
-                <h2 class="navn"></h2>
-                <p class="kortbeskrivelse"></p>
-                <p class="langbeskrivelse"></p>
-                <p class="ingredienser"></p>
-                <p class="fremgangsmåde"></p>
-                <img src="" alt="" class="billede">
-            </article>
-        </template>
-        <footer id="footer"></footer>
+    <template>
+        <article class="kategori">
+            <img src="" alt="" class="billede">
+
+            <h2 class="navn"></h2>
+            <p class="kortbeskrivelse"></p>
+            <p class="langbeskrivelse"></p>
+            <p class="ingredienser"></p>
+            <p class="fremgangsmåde"></p>
+        </article>
+    </template>
+    <footer class="footer"></footer>
 </body>
 
 <script>
