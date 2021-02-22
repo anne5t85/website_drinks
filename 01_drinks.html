@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
     * {
@@ -160,6 +162,8 @@
         transform: rotate(45deg) translate(-4px, -4px);
     }
 
+
+
     @media (min-width:730px) {
 
         #menuknap {
@@ -181,11 +185,26 @@
 
     /*    -----FOOTER-----*/
 
+
     footer {
         background-color: rgb(208, 162, 141);
         box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        font-size: 0.8rem;
+        font-family: 'Open Sans', sans-serif;
     }
 
+
+
+    .fa {
+        color: black;
+        font-size: 20px;
+        font-size: 20px;
+
+
+    }
 </style>
 
 <body>
@@ -226,6 +245,7 @@
             </article>
         </template>
 
+
         <footer id="footer">
             <div class="kontakt">
                 <h3>Kontakt os</h3>
@@ -244,12 +264,24 @@
                 </forms>
             </div>
 
-            <div class="medier">
+
+            <div class="container">
                 <h3>Følg os</h3>
-                <img src="icon_img/instaicon.jpg" alt="instagram icon">
-                <img src="icon_img/facebook.png" alt="facebook icon">
+                <div class="footer-social-icons">
+                    <a href="#" class="fa fa-facebook"></a>
+
+
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
             </div>
+
         </footer>
+
+
+
+
+
+
 </body>
 
 <script>
@@ -326,7 +358,4 @@
     function myFunction(x) {
         x.classList.toggle("change");
     }
-
-</script>
-
-</html>
+</script></html>
