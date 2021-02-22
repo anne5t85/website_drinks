@@ -178,6 +178,14 @@
         }
 
     }
+
+    /*    -----FOOTER-----*/
+
+    footer {
+        background-color: rgb(208, 162, 141);
+        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
+    }
+
 </style>
 
 <body>
@@ -217,7 +225,30 @@
                 <img src="" alt="" class="billede">
             </article>
         </template>
-        <footer id="footer"></footer>
+
+        <footer id="footer">
+            <div class="kontakt">
+                <h3>Kontakt os</h3>
+                <p>Tlf.: +45 00902171</p>
+                <p>Mail: info@drinkoclock.dk</p>
+            </div>
+
+            <div class="nyhedsbrev">
+                <forms>
+                    <p>Tilmeld dig vores nyhedsbrev og få tilsendt nye lækre opskrifter</p>
+
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email">
+                    <button>Tilmeld</button>
+                </forms>
+            </div>
+
+            <div class="medier">
+                <h3>Følg os</h3>
+                <img src="icon_img/instaicon.jpg" alt="instagram icon">
+                <img src="icon_img/facebook.png" alt="facebook icon">
+            </div>
+        </footer>
 </body>
 
 <script>
@@ -294,4 +325,7 @@
     function myFunction(x) {
         x.classList.toggle("change");
     }
-</script></html>
+
+</script>
+
+</html>
