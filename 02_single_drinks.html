@@ -224,16 +224,14 @@
         console.log(visDrinks);
         document.querySelector(".navn").textContent = drink.navn + " ";
         document.querySelector(".langbeskrivelse").textContent = drink.langbeskrivelse + " ";
-<<<<<<< HEAD
         console.log(drink.ingredienser);
         document.querySelector(".ingredienser").textContent = drink.ingredienser + " ";
-=======
+
         drink.ingredienser.forEach(ingrediens => {
             const li = document.createElement("li");
             li.textContent = ingrediens;
             document.querySelector(".ingredienser").appendChild(li);
         })
->>>>>>> origin/master
         document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde + " ";
         document.querySelector(".billede").src = medieurl + drink.billede;
         document.querySelector("button").addEventListener("click", tilbageTilDrinks);
@@ -243,32 +241,7 @@
         console.log(tilbageTilDrinks);
         history.back();
     }
-    //    document.querySelector("#menuknap").addEventListener("click", toggleMenu);
-
-
-<<<<<<< HEAD
-    //    function toggleMenu() {
-    //        console.log("toggleMenu");
-    //        document.querySelector("#menu").classList.toggle("hidden");
-    //        myFunction(this);
-    //    }
-    //
-    //    function myFunction(x) {
-    //        x.classList.toggle("change");
-    //    }
-</script></html>
-=======
-    function toggleMenu() {
-        console.log("toggleMenu");
-        document.querySelector("#menu").classList.toggle("hidden");
-        myFunction(this);
-    }
-
-    function myFunction(x) {
-        x.classList.toggle("change");
-    }
 
 </script>
 
 </html>
->>>>>>> origin/master
