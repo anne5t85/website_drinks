@@ -43,7 +43,9 @@
         padding: 3em;
         border: 15px solid white;
         background-color: rgb(208, 162, 141);
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
     }
 
     header {
@@ -345,8 +347,8 @@
 
 <body>
     <section id="first_section">
-        <a href="index.html"><img src="images/black.png" alt="logo" class="logomobile"></a>
-        <a href="index.html"><img src="images/black.png" alt="logo" class="logodesktop"></a>
+        <a href="index.html"><img src="images/black.svg" alt="logo" class="logomobile"></a>
+        <a href="index.html"><img src="images/black.svg" alt="logo" class="logodesktop"></a>
 
         <h1>IT'S DRINK O'CLOCK</h1>
 
@@ -376,12 +378,9 @@
     <template>
         <article class="kategori">
             <img src="" alt="" class="billede">
-
             <h2 class="navn"></h2>
             <p class="kortbeskrivelse"></p>
-            <p class="langbeskrivelse"></p>
-            <p class="ingredienser"></p>
-            <p class="fremgangsmåde"></p>
+
             <button class="more">Se opskrift</button>
         </article>
     </template>
