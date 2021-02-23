@@ -23,12 +23,7 @@
 
 
     img {
-
         width: 55%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -51,15 +46,28 @@
         font-size: 2rem;
     }
 
+    h3 {
+        font-family: 'Dancing Script', cursive;
+        color: white;
+        font-size: rem;
+    }
+
     p {
         font-family: 'Open Sans', sans-serif;
     }
 
-    li .ingredienser {
+    .ingredienser {
         color: white;
     }
 
-    /*---------Style af menu knapper---------*/
+
+    .kategori {
+        padding: 4em;
+        margin: 20px;
+        border: 15px solid white;
+        background-color: rgb(208, 162, 141);
+    }
+
     button {
         background-color: rgb(234, 205, 192);
         color: white;
@@ -67,8 +75,9 @@
         border: #725e54;
         font-size: 18px;
         display: inline-block;
-        padding: 10px;
-        margin: 15px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         font-family: 'Open Sans', sans-serif;
         text-decoration: none;
     }
@@ -83,94 +92,6 @@
         cursor: pointer;
         color: rgb(234, 205, 192);
     }
-
-    .kategori {
-        padding: 4em;
-        margin: 20px;
-        border: 15px solid white;
-        background-color: rgb(208, 162, 141);
-    }
-
-    .hidden {
-        opacity: 0;
-        cursor: pointer;
-    }
-
-
-    #menuknap_wrapper {
-        /*        padding-right: 10px;*/
-        color: white;
-        margin-top: 10px;
-        ;
-    }
-
-    #menuknap {
-        display: inline-block;
-
-    }
-
-
-    #menu {
-        list-style-type: none;
-        display: block;
-        margin-bottom: 0;
-        /*        padding-right: 30px;*/
-    }
-
-    #menu li {
-        list-style: none;
-
-    }
-
-    nav ul {
-        position: absolute;
-        z-index: 1;
-        padding-left: 0;
-        background-color: #D0A28D;
-        width: 100%;
-        height: 54vh;
-        margin: 0;
-    }
-
-    nav {
-        text-align: center;
-        padding-top: 4px;
-
-    }
-
-
-    /* ------- burgermenu icon -----------*/
-    .bar1,
-    .bar2,
-    .bar3 {
-        width: 30px;
-        height: 2px;
-        background-color: #000000;
-        margin: 6px 0;
-        transition: 0.4s;
-    }
-
-
-    .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-8px, 6px);
-
-        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
-        cursor: pointer;
-
-    }
-
-
-    .change .bar2 {
-        opacity: 0;
-    }
-
-
-    .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-4px, -4px);
-    }
-
 
     /*-------billede og logo i mobile------*/
     #first_section {
@@ -212,37 +133,6 @@
             text-align: center;
         }
 
-        #menuknap {
-            display: none;
-        }
-
-
-        #menu.hidden {
-            opacity: 1;
-        }
-
-        #menuknap_wrapper {
-            padding-right: 30px;
-            width: 20%;
-
-        }
-
-
-        #menu li {
-            display: inline-block;
-            margin: 1rem;
-            padding: 0;
-
-        }
-
-        nav ul {
-            position: relative;
-            padding-left: 0;
-            background: none;
-            height: 2rem;
-            width: 100%;
-            margin: 0;
-        }
 
         button {
             font-size: 20px;
@@ -294,10 +184,9 @@
                 <h2 class="navn"></h2>
                 <p class="kortbeskrivelse"></p>
                 <p class="langbeskrivelse"></p>
-                <li>
-                    <p class="ingredienser"></p>
-                </li>
-
+                <h3>Ingredienser</h3>
+                <ul class="ingredienser"></ul>
+                <h3>Fremgangsmåde</h3>
                 <p class="fremgangsmåde"></p>
                 <button>Tilbage</button>
             </div>
@@ -335,7 +224,11 @@
         console.log(visDrinks);
         document.querySelector(".navn").textContent = drink.navn + " ";
         document.querySelector(".langbeskrivelse").textContent = drink.langbeskrivelse + " ";
-        document.querySelector(".ingredienser").textContent = drink.ingredienser + " ";
+        drink.ingredienser.forEach(ingrediens => {
+            const li = document.createElement("li");
+            li.textContent = ingrediens;
+            document.querySelector(".ingredienser").appendChild(li);
+        })
         document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde + " ";
         document.querySelector(".billede").src = medieurl + drink.billede;
         document.querySelector("button").addEventListener("click", tilbageTilDrinks);
