@@ -27,6 +27,7 @@
     img {
         width: 55%;
         display: block;
+        align-self: end;
         margin-left: auto;
         margin-right: auto;
     }
@@ -289,6 +290,7 @@
 
         }
     }
+
 </style>
 
 
@@ -376,7 +378,7 @@
         document.querySelector(".navn").textContent = drink.navn + " ";
         document.querySelector(".langbeskrivelse").textContent = drink.langbeskrivelse + " ";
         console.log(drink.ingredienser);
-// document.querySelector(".ingredienser").textContent = drink.ingredienser + " ";
+        // document.querySelector(".ingredienser").textContent = drink.ingredienser + " ";
         drink.ingredienser.forEach(ingrediens => {
             const li = document.createElement("li");
             li.textContent = ingrediens;
@@ -391,4 +393,7 @@
         console.log(tilbageTilDrinks);
         history.back();
     }
-</script></html>
+
+</script>
+
+</html>
