@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        margin-top: 6rem;
+        padding-top: 60px;
+        font-family: 'Dancing Script', cursive;
+
+    }
+
+    #first_section {
+        width: 100%;
+        height: 100vh;
+        background-image: url(images/forside.jpg);
+        background-size: cover;
+        background-position: 56% 50%;
+        max-width: none;
+    }
+
+    .logo {
+        display: block;
+        margin-bottom: 0;
+        padding-top: 9rem;
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
+        width: 200px;
+    }
+
+    .button {
+        background-color: #D0A28D;
+        color: white;
+        border-radius: 5px;
+        border: #725e54;
+        font-size: 18px;
+        display: inline-block;
+        padding: 10px;
+        margin: 15px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+
+
+    .button:hover {
+        color: black;
+        transition-duration: 0.2s;
+
+    }
+
+
+    /* --------desktop-------*/
+    @media (min-width:850px) {
+        h1 {
+            font-size: 5rem;
+        }
+
+
+
+    }
+
+</style>
+
+<body>
+
+    <section id="first_section">
+        <div class="logo">
+            <a href="forside_drinks.html"><img src="images/black.png" alt="logo"></a>
+        </div>
+        <h1>IT'S DRINK O'CLOCK</h1>
+        <a href="index.html" class="button">Se drinks</a>
+    </section>
+
+    <script>
+        document.querySelector(" #menuknap").addEventListener("click", toggleMenu);
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+            myFunction(this);
+        }
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+
+    </script>
+</body>
+
+</html>
