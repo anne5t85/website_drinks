@@ -24,11 +24,13 @@
 
     }
 
+
     img {
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
+
 
     #liste {
         display: grid;
@@ -65,10 +67,6 @@
         cursor: pointer;
     }
 
-
-
-
-
     button:hover {
         color: black;
         transition-duration: 0.2s;
@@ -79,13 +77,15 @@
         color: rgb(234, 205, 192);
     }
 
-    /*
+    /*---------Style af se opskrift knap---------*/
+
+
     article button {
         background-color: white;
         color: black;
         border-radius: 3px;
         border: #725e54;
-        font-size: 18px;
+        font-size: 15px;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -93,8 +93,8 @@
         box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
         cursor: pointer;
     }
-*/
-    article button {
+
+    */ article button {
         background-color: rgb(234, 205, 192);
         color: white;
         border-radius: 5px;
@@ -347,6 +347,14 @@
             display: none;
         }
 
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        grid-gap: 10px;
+        font-size: 0.8rem;
 
     }
 
@@ -406,6 +414,7 @@
         </article>
     </template>
 
+
     <footer id="footer">
         <div class="kontakt">
             <h3>Kontakt os</h3>
@@ -432,8 +441,6 @@
         </div>
 
     </footer>
-
-
 </body>
 
 <script>
