@@ -401,6 +401,7 @@
         console.log(visDrinks);
         document.querySelector(".navn").textContent = drink.navn + " ";
         document.querySelector(".langbeskrivelse").textContent = drink.langbeskrivelse + " ";
+        console.log(drink.ingredienser);
         document.querySelector(".ingredienser").textContent = drink.ingredienser + " ";
         document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde + " ";
         document.querySelector(".billede").src = medieurl + drink.billede;
@@ -411,16 +412,16 @@
         console.log(tilbageTilDrinks);
         history.back();
     }
-    document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+    //    document.querySelector("#menuknap").addEventListener("click", toggleMenu);
 
 
-    function toggleMenu() {
-        console.log("toggleMenu");
-        document.querySelector("#menu").classList.toggle("hidden");
-        myFunction(this);
-    }
-
-    function myFunction(x) {
-        x.classList.toggle("change");
-    }
+    //    function toggleMenu() {
+    //        console.log("toggleMenu");
+    //        document.querySelector("#menu").classList.toggle("hidden");
+    //        myFunction(this);
+    //    }
+    //
+    //    function myFunction(x) {
+    //        x.classList.toggle("change");
+    //    }
 </script></html>
