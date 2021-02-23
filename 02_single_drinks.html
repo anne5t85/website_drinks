@@ -9,8 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <style>
@@ -32,7 +30,6 @@
     }
 
 
-
     h1 {
         text-align: center;
         font-family: 'Dancing Script', cursive;
@@ -49,38 +46,20 @@
         font-size: 2rem;
     }
 
+    h3 {
+        font-family: 'Dancing Script', cursive;
+        color: white;
+        font-size: rem;
+    }
+
     p {
         font-family: 'Open Sans', sans-serif;
     }
 
-    li .ingredienser {
+    .ingredienser {
         color: white;
     }
 
-    /*---------Style af menu knapper---------*/
-    button {
-        background-color: rgb(234, 205, 192);
-        color: white;
-        border-radius: 5px;
-        border: #725e54;
-        font-size: 18px;
-        display: inline-block;
-        padding: 10px;
-        margin: 15px;
-        font-family: 'Open Sans', sans-serif;
-        text-decoration: none;
-
-    }
-
-    button:hover {
-        color: black;
-        transition-duration: 0.2s;
-    }
-
-    .valgt {
-        cursor: pointer;
-        color: rgb(234, 205, 192);
-    }
 
     .kategori {
         padding: 4em;
@@ -89,81 +68,30 @@
         background-color: rgb(208, 162, 141);
     }
 
-    .hidden {
-        opacity: 0;
-        cursor: pointer;
-    }
-
-
-    #menuknap_wrapper {
-        /*        padding-right: 10px;*/
+    button {
+        background-color: rgb(234, 205, 192);
         color: white;
-        margin-top: 10px;
-        ;
-    }
-
-    #menuknap {
+        border-radius: 5px;
+        border: #725e54;
+        font-size: 18px;
         display: inline-block;
-    }
-
-
-    #menu {
-        list-style-type: none;
         display: block;
-        margin-bottom: 0;
-        /*        padding-right: 30px;*/
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Open Sans', sans-serif;
+        text-decoration: none;
     }
 
-    #menu li {
-        list-style: none;
+    button:hover {
+        color: black;
+        transition-duration: 0.2s;
+
     }
 
-    nav ul {
-        position: absolute;
-        z-index: 1;
-        padding-left: 0;
-        background-color: #D0A28D;
-        width: 100%;
-        height: 54vh;
-        margin: 0;
-    }
-
-    nav {
-        text-align: center;
-        padding-top: 4px;
-    }
-
-
-    /* ------- burgermenu icon -----------*/
-    .bar1,
-    .bar2,
-    .bar3 {
-        width: 30px;
-        height: 2px;
-        background-color: #000000;
-        margin: 6px 0;
-        transition: 0.4s;
-    }
-
-
-    .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-8px, 6px);
-        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
+    .valgt {
         cursor: pointer;
+        color: rgb(234, 205, 192);
     }
-
-
-    .change .bar2 {
-        opacity: 0;
-    }
-
-
-    .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-4px, -4px);
-    }
-
 
     /*-------billede og logo i mobile------*/
     #first_section {
@@ -188,47 +116,6 @@
         display: none;
     }
 
-    /*-----Style af footer------*/
-
-
-
-
-
-    footer {
-        background-color: rgb(208, 162, 141);
-        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
-        font-size: 0.8rem;
-        font-family: 'Open Sans', sans-serif;
-        text-align: center;
-
-    }
-
-
-
-    .fa {
-        color: black;
-        font-size: 20px;
-        font-size: 20px;
-        margin: 10px;
-
-    }
-
-
-    #tilmeld {
-        background-color: white;
-        color: black;
-        border-radius: 2px;
-        border: #725e54;
-        font-size: 13px;
-        display: inline-block;
-        padding: 10px;
-        margin: 15px;
-        font-family: 'Dancing Script', cursive;
-        box-shadow: 0 3px 5px 0 rgba(208, 162, 141, 0.58);
-
-
-    }
-
     @media (min-width:750px) {
         .kategori {
             display: grid;
@@ -246,37 +133,6 @@
             text-align: center;
         }
 
-        #menuknap {
-            display: none;
-        }
-
-
-        #menu.hidden {
-            opacity: 1;
-        }
-
-        #menuknap_wrapper {
-            padding-right: 30px;
-            width: 20%;
-
-        }
-
-
-        #menu li {
-            display: inline-block;
-            margin: 1rem;
-            padding: 0;
-
-        }
-
-        nav ul {
-            position: relative;
-            padding-left: 0;
-            background: none;
-            height: 2rem;
-            width: 100%;
-            margin: 0;
-        }
 
         button {
             font-size: 20px;
@@ -305,15 +161,8 @@
             display: none;
         }
 
-        footer {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-
-            grid-gap: 10px;
-            font-size: 0.8rem;
-
-        }
     }
+
 </style>
 
 
@@ -335,42 +184,16 @@
                 <h2 class="navn"></h2>
                 <p class="kortbeskrivelse"></p>
                 <p class="langbeskrivelse"></p>
-                <li>
-                    <p class="ingredienser"></p>
-                </li>
-
+                <h3>Ingredienser</h3>
+                <ul class="ingredienser"></ul>
+                <h3>Fremgangsmåde</h3>
                 <p class="fremgangsmåde"></p>
                 <button>Tilbage</button>
             </div>
         </article>
     </header>
     <section id="liste"></section>
-    <footer id="footer">
-        <div class="kontakt">
-            <h3>Kontakt os</h3>
-            <p>Tlf.: +45 00902171</p>
-            <p>Mail: info@drinkoclock.dk</p>
-        </div>
-        <div class="nyhedsbrev">
-            <forms>
-                <h3>Nyhedsbrev</h3>
-                <p>Tilmeld dig vores nyhedsbrev og få tilsendt nye lækre opskrifter</p>
-                <label for="email">E-mail</label>
-                <input id="email" name="email" type="email">
-                <button id="tilmeld">Tilmeld</button>
-            </forms>
-        </div>
 
-
-        <div class="container">
-            <h3>Følg os</h3>
-            <div class="footer-social-icons">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-instagram"></a>
-            </div>
-        </div>
-
-    </footer>
 </body>
 
 <script>
@@ -401,8 +224,16 @@
         console.log(visDrinks);
         document.querySelector(".navn").textContent = drink.navn + " ";
         document.querySelector(".langbeskrivelse").textContent = drink.langbeskrivelse + " ";
+<<<<<<< HEAD
         console.log(drink.ingredienser);
         document.querySelector(".ingredienser").textContent = drink.ingredienser + " ";
+=======
+        drink.ingredienser.forEach(ingrediens => {
+            const li = document.createElement("li");
+            li.textContent = ingrediens;
+            document.querySelector(".ingredienser").appendChild(li);
+        })
+>>>>>>> origin/master
         document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde + " ";
         document.querySelector(".billede").src = medieurl + drink.billede;
         document.querySelector("button").addEventListener("click", tilbageTilDrinks);
@@ -415,6 +246,7 @@
     //    document.querySelector("#menuknap").addEventListener("click", toggleMenu);
 
 
+<<<<<<< HEAD
     //    function toggleMenu() {
     //        console.log("toggleMenu");
     //        document.querySelector("#menu").classList.toggle("hidden");
@@ -425,3 +257,18 @@
     //        x.classList.toggle("change");
     //    }
 </script></html>
+=======
+    function toggleMenu() {
+        console.log("toggleMenu");
+        document.querySelector("#menu").classList.toggle("hidden");
+        myFunction(this);
+    }
+
+    function myFunction(x) {
+        x.classList.toggle("change");
+    }
+
+</script>
+
+</html>
+>>>>>>> origin/master
