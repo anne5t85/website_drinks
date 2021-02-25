@@ -129,41 +129,32 @@
         text-align: center;
     }
 
-    /*------Style af burgermenu-------*/
+    /*------Skjuler burger menu i desktop-------*/
     .hidden {
         opacity: 0;
         cursor: pointer;
     }
 
-
+    /*------style af tekst i menu-------*/
     #menuknap_wrapper {
-        /*        padding-right: 10px;*/
         color: white;
         margin-top: 10px;
         ;
     }
 
+    /*------Placer menu i midten-------*/
     #menuknap {
         display: inline-block;
-
     }
 
-
+    /*------fjerner liste punkter-------*/
     #menu {
         list-style-type: none;
-        display: block;
-        margin-bottom: 0;
-        /*        padding-right: 30px;*/
     }
 
-    #menu li {
-        list-style: none;
-
-    }
-
+    /*------style af drop down menu-------*/
     nav ul {
         position: absolute;
-        z-index: 1;
         padding-left: 0;
         background-color: #D0A28D;
         width: 100%;
@@ -174,11 +165,12 @@
     nav {
         text-align: center;
         padding-top: 4px;
-
     }
 
 
     /* ------- burgermenu icon -----------*/
+
+    /*Burgermenuens strenge styles*/
     .bar1,
     .bar2,
     .bar3 {
@@ -189,17 +181,15 @@
         transition: 0.4s;
     }
 
-
+    /*Burgermenuens strenge ved klik - transformering */
     .change .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
         transform: rotate(-45deg) translate(-8px, 6px);
     }
 
-
     .change .bar2 {
         opacity: 0;
     }
-
 
     .change .bar3 {
         -webkit-transform: rotate(45deg) translate(-8px, -8px);
@@ -360,11 +350,6 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 10px;
         font-size: 0.8rem;
-<<<<<<< HEAD
-
-=======
-        <<<<<<< HEAD=======>>>>>>>origin/master
->>>>>>> origin/master
     }
 
 </style>
@@ -381,16 +366,18 @@
         <nav>
             <div id="menuknap_wrapper">
                 <div id="menuknap">
+                    <!--burger menu der vises i mobile version -->
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
                 </div>
             </div>
             <ul id="menu" class="hidden">
+                <!--data attributter-->
 
                 <li><button data-drinks="alle" class="valgt">ALLE</button></li>
-                <li> <button data-drinks="Gin">GIN</button></li>
-                <li> <button data-drinks="Vodka">VODKA</button></li>
+                <li><button data-drinks="Gin">GIN</button></li>
+                <li><button data-drinks="Vodka">VODKA</button></li>
                 <li><button data-drinks="Rom">ROM</button></li>
                 <li><button data-drinks="Mocktail"> MOCKTAILS</button></li>
 
@@ -400,6 +387,7 @@
     <section id="liste"></section>
 
     <template>
+        <!--Indholdet af <template> tag er html skabelon for de enkelte retter-->
         <article class="kategori">
             <img src="" alt="" class="billede">
             <h2 class="navn"></h2>
@@ -452,11 +440,12 @@
     // første funktion der kaldes efter DOM er loaded
     function start() {
         console.log(start);
+        //funktion der lægger en eventListener på alle filtreringsknapper
         const filterKnapper = document.querySelectorAll("nav button");
         filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));
         loadJSON();
     }
-
+    //funktion der filtrer indholdet på siden, alt efter hvilken knap der er klikket på
     function filtrerDrinks() {
         console.log(filtrerDrinks);
         filter = this.dataset.drinks;
@@ -465,6 +454,7 @@
         visDrinks(drinks);
         header.textContent = this.textContent;
     }
+    //Her hentes json data ind og sendes videre til funktionen visDrinks
     async function loadJSON() {
         console.log(loadJSON);
         const JSONData = await fetch("https://temaopgave-7c0f.restdb.io/rest/drinks", {
@@ -474,7 +464,7 @@
         console.log("Drinks", drinks);
         visDrinks(drinks);
     }
-
+    // visDrinks sætter hver enkelt drink ind i html
     function visDrinks() {
         console.log(visDrinks);
         const dest = document.querySelector("#liste"); // container til articles med en person
@@ -483,19 +473,19 @@
 
         drinks.forEach(drink => {
             console.log("Drinks", drink.navn);
-            // loop igennem json (personer)
+            // loop igennem json (drinks)
             if (filter == drink.kategori || filter == "alle") {
                 const klon = skabelon.cloneNode(true);
                 klon.querySelector(".navn").textContent = drink.navn + " ";
                 klon.querySelector(".kortbeskrivelse").textContent = drink.kortbeskrivelse + " ";
                 klon.querySelector(".billede").src = medieurl + drink.billede;
                 klon.querySelector("article").addEventListener("click", () => visDetaljer(drink));
-                dest.appendChild(klon);
+                dest.appendChild(klon); //klonen tilføjes til DOM
             }
 
         })
     }
-
+    //Her linkes til den valgte drinks side
     function visDetaljer(hvem) {
         console.log(visDetaljer);
         location.href = `02_single_drinks.html?id=${hvem._id}`

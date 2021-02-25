@@ -271,6 +271,7 @@
     console.log("ID", id);
     document.addEventListener("DOMContentLoaded", loadJSON);
 
+    //Her hentes json data ind og sendes videre til funktionen visDrinks
     async function loadJSON() {
         console.log(loadJSON);
         const JSONData = await fetch(`https://temaopgave-7c0f.restdb.io/rest/drinks/${id}`, {
@@ -281,12 +282,13 @@
         visDrinks(drink);
     }
 
+    //Når der klikkes op en enkelt drink vises denne separat for den valgte drink
     function visDrinks(drink) {
         console.log(visDrinks);
         document.querySelector(".navn").textContent = drink.navn + " ";
         document.querySelector(".langbeskrivelse").textContent = drink.langbeskrivelse + " ";
+        //Ingrediens liste opstilles i punktform
         console.log(drink.ingredienser);
-        // document.querySelector(".ingredienser").textContent = drink.ingredienser + " ";
         drink.ingredienser.forEach(ingrediens => {
             const li = document.createElement("li");
             li.textContent = ingrediens;
